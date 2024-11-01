@@ -1,0 +1,27 @@
+<h2 class="text-center">ระบบจัดการโซน</h2>
+
+<div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+<table class="table table-bordered mt-3">
+  <thead>
+    <tr>
+      <th>รหัสโซน</th>
+      <th>ชื่อโซน</th>
+      <th>ข้อมูลโซน</th>
+      <th>จำนวนบูธ</th>
+      <th>การจัดการ</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let zone of zones">
+      <td>{{ zone.zone_id }}</td>
+      <td>{{ zone.zone_name }}</td>
+      <td>{{ zone.zone_info }}</td>
+      <td>{{ zone.number_of_booths }}</td>
+      <td>
+        <button (click)="editZone(zone)" class="btn btn-primary btn-sm me-2">แก้ไข</button>
+        <button (click)="deleteZone(zone.zone_id)" class="btn btn-danger btn-sm">ลบ</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

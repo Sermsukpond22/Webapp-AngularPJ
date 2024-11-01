@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+<div class="registration-container">
+  <p class="title">
+    <i class="fa fa-user-plus" style="margin-right: 5px; color: #009c98;"></i>สมัครสมาชิก
+  </p>
+
+  <!-- ข้อความแสดงสถานะสำเร็จหรือล้มเหลว -->
+  <p *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</p>
+  <p *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</p>
+
+  <form novalidate class="registration-form" (ngSubmit)="register()">
+    <div class="input-group">
+      <i class="material-icons">account_box</i>
+      <input type="text" placeholder="ชื่อ" [(ngModel)]="fname" name="first_name" required />
+    </div>
+    
+    <div class="input-group">
+      <i class="material-icons">account_box</i>
+      <input type="text" placeholder="นามสกุล" [(ngModel)]="lname" name="last_name" required />
+    </div>
+    
+    <div class="input-group">
+      <i class="material-icons">phone</i>
+      <input type="tel" placeholder="เบอร์โทร" [(ngModel)]="phone" name="phone" required />
+    </div>
+    
+    <div class="input-group">
+      <i class="material-icons">mail</i>
+      <input type="email" placeholder="อีเมล" [(ngModel)]="email" name="email" required />
+    </div>
+    
+    <div class="input-group">
+      <i class="material-icons">lock</i>
+      <input type="password" placeholder="รหัสผ่าน" [(ngModel)]="password" name="password" required />
+    </div>
+    
+    <button type="submit" class="register-btn">สมัครสมาชิก</button>
+  </form>
+
+  <a routerLink="/login" class="login-link">
+    <p>ถ้าหากต้องการเข้าสู่ระบบ คลิก!</p>
+  </a>
+</div>

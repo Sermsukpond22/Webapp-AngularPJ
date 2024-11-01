@@ -1,0 +1,81 @@
+/* ตั้งค่ากรอบหลัก */
+.login-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* หัวเรื่องของฟอร์ม */
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1169d5;
+  margin-bottom: 20px;
+}
+
+/* การจัดกลุ่มสำหรับช่องข้อมูล */
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group label {
+  width: 100%;
+  margin-bottom: 5px;
+  color: #333;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.input-group i.material-icons {
+  position: absolute;
+  left: 10px;
+  color: #1169d5;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* ปุ่มเข้าสู่ระบบ */
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color:#1169d5;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  background-color: #1169d5;
+}
+
+/* ข้อความแสดงผลสำเร็จและข้อผิดพลาด */
+.success-message {
+  color: #28a745;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-bottom: 15px;
+}

@@ -1,0 +1,27 @@
+<div class="container my-4">
+    <h2 class="text-center">ระบบจัดการบูธ</h2>
+  
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+    <div *ngIf="booths.length > 0; else noBooths" class="row">
+      <div class="col-md-4 mb-4" *ngFor="let booth of booths">
+        <div class="card h-100">
+          <img *ngIf="booth.image_url" [src]="booth.image_url" class="card-img-top" alt="Booth Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ booth.booth_name }}</h5>
+            <p class="card-text">ขนาด: {{ booth.booth_size }}</p>
+            <p class="card-text">สถานะ: {{ booth.booth_status }}</p>
+            <p class="card-text">ราคา: {{ booth.price | currency:'THB' }}</p>
+  
+            <button class="btn btn-warning me-2" (click)="editBooth(booth)">แก้ไข</button>
+            <button class="btn btn-danger" (click)="deleteBooth(booth.booth_id)">ลบ</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <ng-template #noBooths>
+      <p class="text-center text-muted">ไม่มีข้อมูลบูธ</p>
+    </ng-template>
+  </div>
+  

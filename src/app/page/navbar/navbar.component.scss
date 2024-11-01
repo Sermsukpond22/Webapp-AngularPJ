@@ -1,0 +1,62 @@
+/* Navbar Styling */
+.navbar {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between; /* ทำให้มีระยะระหว่างแบรนด์กับปุ่ม */
+    align-items: center;
+    padding: 0.5rem 1rem;
+  }
+  
+  .navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #005f00;
+  }
+  
+  .navbar-title {
+    color: #005f00;
+  }
+  
+  /* Button Container for aligning buttons to the right */
+  .navbar-buttons {
+    display: flex;
+    gap: 10px; /* เว้นระยะห่างระหว่างปุ่ม */
+  }
+  
+  /* Button Styling */
+  .btn-custom {
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .btn-login {
+    background-color: #007bff;
+    color: white;
+    border: none;
+  }
+  
+  .btn-login:hover {
+    background-color: #0056b3;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+  }
+  
+  .btn-register {
+    background-color: #28a745;
+    color: white;
+    border: none;
+  }
+  
+  .btn-register:hover {
+    background-color: #218838;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.2);
+  }
+  

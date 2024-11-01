@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+<div class="container my-4">
+  <h2 class="text-center">ข้อมูลบูธในบูธ {{ zoneId }}</h2>
+  
+  <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+  <div *ngIf="booths.length > 0; else noBooths" class="row">
+    <div class="col-md-4 mb-4" *ngFor="let booth of booths">
+      <div class="detail-boot card h-100">
+        <div class="image-container">
+          <img *ngIf="booth.image_url" [src]="booth.image_url" class="img-boot card-img-top" alt="Booth Image">
+          <div class="number-overlay">{{ booth.booth_id }}</div>
+        </div>
+        <div class="card-body detail">
+          <p>สถานะ: {{ booth.booth_status }}</p>
+          <p>ราคา: {{ booth.price | currency:'THB' }}</p>
+          <p>ขนาด: {{ booth.booth_size }}</p>
+        </div>
+        
+        <!-- ปุ่มจองบูธ แสดงตามสถานะของ booth -->
+        <button 
+          *ngIf="booth.booth_status === 'ว่าง'" 
+          class="reserva-btn-full btn-green" 
+          (click)="reserveBooth(booth)">
+          <i class="material-icons">add_box</i> จองบูธ
+        </button>
+
+        <button 
+          *ngIf="booth.booth_status === 'อยู่ระหว่างตรวจสอบ'" 
+          class="reserva-btn-full btn-yellow" 
+          disabled>
+          <i class="material-icons">hourglass_empty</i> อยู่ระหว่างตรวจสอบ
+        </button>
+
+        <button 
+          *ngIf="booth.booth_status === 'จองแล้ว'" 
+          class="reserva-btn-full btn-red" 
+          disabled>
+          <i class="material-icons">https</i> เต็ม
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #noBooths>
+    <p class="text-center text-muted">ไม่มีข้อมูลบูธในโซนนี้</p>
+  </ng-template>
+</div>

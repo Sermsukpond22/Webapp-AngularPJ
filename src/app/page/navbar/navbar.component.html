@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm p-3 mb-5 bg-white rounded">
+  <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="assets/logo.png" alt="KU Logo" width="40" height="40" class="mr-2" />
+    <span class="navbar-title">ระบบจองบูธงานเกษตรแฟร์</span>
+  </a>
+
+  <!-- ปุ่ม Toggle สำหรับ Navbar ในหน้าจอขนาดเล็ก -->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <!-- ปุ่มจะอยู่ด้านขวาสุดในหน้าจอ PC หรือ Laptop -->
+    <div class="ml-auto d-flex align-items-center">
+      <button class="btn btn-custom btn-login mr-3" (click)="goToLogin()">
+        <i class="fas fa-sign-in-alt"></i> เข้าสู่ระบบ
+      </button>
+      <button class="btn btn-custom btn-register" (click)="goToRegister()">
+        <i class="fas fa-user-plus"></i> สมัครสมาชิก
+      </button>
+    </div>
+  </div>
+</nav>

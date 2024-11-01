@@ -1,0 +1,34 @@
+<h2 class="text-center">แก้ไขข้อมูลบูธ</h2>
+
+<form (ngSubmit)="saveChanges()">
+  <div class="form-group">
+    <label>ชื่อบูธ:</label>
+    <input type="text" [(ngModel)]="boothName" name="boothName" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>ขนาดบูธ:</label>
+    <input type="text" [(ngModel)]="boothSize" name="boothSize" required class="form-control">
+  </div>
+
+  <div class="form-group">
+    <label>สถานะ:</label>
+    <select [(ngModel)]="boothStatus" name="boothStatus" class="form-control">
+      <option value="available">ว่าง</option>
+      <option value="booked">จองแล้ว</option>
+      <option value="under_review">อยู่ระหว่างตรวจสอบ</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>ราคา:</label>
+    <input type="number" [(ngModel)]="price" name="price" required class="form-control">
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+
+  <div class="text-center mt-3">
+    <button type="button" (click)="close()" class="btn btn-secondary me-2">ยกเลิก</button>
+    <button type="submit" class="btn btn-primary">บันทึก</button>
+  </div>
+</form>

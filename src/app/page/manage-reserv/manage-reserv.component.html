@@ -1,0 +1,34 @@
+<div class="container my-4">
+    <h2 class="text-center">จัดการการจอง</h2>
+  
+    <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+  
+    <table class="table table-bordered mt-3" *ngIf="reservations.length > 0; else noReservations">
+      <thead>
+        <tr>
+          <th>ID การจอง</th>
+          <th>ชื่อผู้จอง</th>
+          <th>รหัสบูธ</th>
+          <th>สถานะ</th>
+          <th>การจัดการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reservation of reservations">
+          <td>{{ reservation.reservation_id }}</td>
+          <td>{{ reservation.user_name }}</td>
+          <td>{{ reservation.booth_id }}</td>
+          <td>{{ reservation.status }}</td>
+          <td>
+            <button (click)="confirmReservation(reservation.reservation_id)" class="btn btn-success btn-sm">ยืนยัน</button>
+            <button (click)="deleteReservation(reservation.reservation_id)" class="btn btn-danger btn-sm">ลบ</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  
+    <ng-template #noReservations>
+      <p class="text-center text-muted">ไม่มีข้อมูลการจอง</p>
+    </ng-template>
+  </div>
+  

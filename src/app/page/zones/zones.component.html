@@ -1,0 +1,16 @@
+<div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+
+<div class="zones-container">
+  <div *ngFor="let zone of zones" class="zone-card">
+    <img class="img-zone" [src]="zone.image_url || '../assets/img/zone/default.png'" alt="Zone Image">
+    <p class="name_zone">
+      <i class="pi pi-shop" style="font-size: 1rem; margin-right: 5px;"></i>{{ zone.zone_name }}
+    </p>
+    <p class="detail-z">รายละเอียด</p>
+    <p class="detail-z" style="font-size: 12px;">{{ zone.zone_info }}</p>
+    <p class="detail-z">จำนวนบูธ: {{ zone.number_of_booths }}</p>
+    <button class="reserva-btn" (click)="goToBooths(zone.zone_id)">
+      <i class="material-icons">add_box</i> ดูบูธในโซนนี้
+    </button>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+/* ตั้งค่ากรอบและรูปแบบพื้นฐาน */
+.registration-container {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+/* จัดสไตล์ของหัวเรื่อง */
+.registration-container .title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1169d5;
+  margin-bottom: 20px;
+}
+
+/* การจัดการช่องอินพุต */
+.registration-form .input-group {
+  position: relative;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.input-group i.material-icons {
+  position: absolute;
+  left: 10px;
+  color: #1169d5;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* ปุ่มสมัครสมาชิก */
+.register-btn {
+  width: 100%;
+  padding: 10px;
+  color: #fff;
+  background-color: #1169d5;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.register-btn:hover {
+  background-color: #1169d5;
+}
+
+/* ลิงก์เข้าสู่ระบบ */
+.login-link p {
+  color: #1169d5;
+  font-size: 14px;
+  margin-top: 20px;
+  text-decoration: underline;
+  cursor: pointer;
+}
